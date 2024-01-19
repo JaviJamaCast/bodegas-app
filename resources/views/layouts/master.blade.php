@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
                 <!-- Brand -->
-                <a class="navbar-brand font-weight-bold text-primary" href="#">
+                <a class="navbar-brand font-weight-bold text-primary" href="{{ route('bodegas.index') }}">
                     Departamento de Turismo de la Diputación Foral de Álava
                 </a>
 
@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupported">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Inicio</a>
+                            <a class="nav-link" href="{{ route('bodegas.index') }}">Inicio</a>
                         </li>
                         <!-- Más elementos del menú aquí -->
                     </ul>
