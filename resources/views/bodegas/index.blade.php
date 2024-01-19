@@ -41,4 +41,4 @@
 </div>
 @endsection
 
-@section('footer', '')
+@section('footer', 'Diputación Foral de Álava')

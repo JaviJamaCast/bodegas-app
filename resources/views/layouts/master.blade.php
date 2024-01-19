@@ -8,7 +8,7 @@
     @vite(['resources/sass/app.scss'])
 </head>
 
-<body class="bg-light">
+<body class="bg-light d-flex flex-column" style="min-height: 100vh;"> <!-- Ajuste para la altura y flexibilidad -->
 
     <header>
         <!-- Navbar de Bootstrap -->
@@ -18,12 +18,10 @@
                 <a class="navbar-brand font-weight-bold text-primary" href="{{ route('bodegas.index') }}">
                     Departamento de Turismo de la Diputación Foral de Álava
                 </a>
-
-                <!-- Toggler/Collapsibe Button -->
+                <!-- Toggler/Collapsible Button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <!-- Navbar links -->
                 <div class="collapse navbar-collapse" id="navbarSupported">
                     <ul class="navbar-nav ml-auto">
@@ -37,11 +35,11 @@
         </nav>
     </header>
 
-    <main class="container my-4">
+    <main class="container my-4 flex-grow-1"> <!-- Ajuste para crecimiento flexible -->
         @yield('content')
     </main>
 
-    <footer class="bg-white text-center text-dark py-4">
+    <footer class="bg-white text-center text-dark py-4 mt-auto"> <!-- Clase mt-auto para empujar al fondo -->
         <div class="container">
             @yield('footer')
         </div>
