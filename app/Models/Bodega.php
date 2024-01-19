@@ -13,4 +13,10 @@ class Bodega extends Model
         'ubicacion',
         'telefono'
     ];
+
+    public function vinos()
+    {
+        return $this->hasMany(Vino::class);
+    }
+
 }

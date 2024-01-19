@@ -17,7 +17,12 @@ class VinoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->text($maxNbChars = 10),
+            'tipo' => $this->faker->text($maxNbChars = 20),
+            'cosecha' => $this->faker->text($maxNbChars = 8),
+            'precio' => $this->faker->numberBetween(0, 100),
+            'stock' => $this->faker->numberBetween(0, 22),
+            'bodega_id' => $this->faker->numberBetween(1, 10)
         ];
     }
 }

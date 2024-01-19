@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\Bodega::factory(10)->create();
-        
+        \App\Models\Vino::factory(10)->create();
     }
 }

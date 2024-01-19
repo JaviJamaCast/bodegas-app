@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('vinos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bodega_id')->constrained()->cascadeOnDelete();
+            $table->string('nombre');
+            $table->string('tipo');
+            $table->string('cosecha');
+            $table->double('precio');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

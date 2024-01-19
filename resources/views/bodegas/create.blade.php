@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form method="POST" action="{{ route('bodegas.store') }}" class="mt-3">
+    <form method="POST" action="{{ route('bodegas.store') }}">
         @csrf
         <div>
             <label for="nombre">Nombre:</label>

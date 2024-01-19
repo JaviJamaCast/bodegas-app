@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Vino extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nombre', 'tipo', 'cosecha', 'precio', 'stock'
+    ];
+    public function Bodega()
+    {
+        return $this->belongsTo(Bodega::class);
+    }
 }
