@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('bodegas', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre")
+            $table->string("nombre");
+            $table->string("ubicacion");
+            $table->string("telefono");
             $table->timestamps();
         });
     }

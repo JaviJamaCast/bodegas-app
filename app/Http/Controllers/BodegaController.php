@@ -12,7 +12,10 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        //
+        $bodegas = Bodega::all();
+        return view('bodegas.index', [
+            'bodegas' => $bodegas
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class BodegaController extends Controller
      */
     public function create()
     {
-        //
+        return view('bodegas.create');
     }
 
     /**
@@ -28,7 +31,21 @@ class BodegaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validar la petición:
+        $validated = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'ubicacion' => 'required|string',
+            'telefono' => 'required|string|max:9'
+        ]);
+        /* Si la validación falla se redirigirá al usuario 
+        a la página previa. Si pasa la validación, el controlador 
+        continuará ejecutándose.
+        */
+
+        // Insertar el artículo en la BBDD tras su validación.
+        Bodega::create($validated);
+
+        return redirect(route('bodegas.index'));
     }
 
     /**
@@ -36,7 +53,9 @@ class BodegaController extends Controller
      */
     public function show(Bodega $bodega)
     {
-        //
+        return view('bodegas.show', [
+            'bodega' => $bodega
+        ]);
     }
 
     /**
@@ -44,7 +63,9 @@ class BodegaController extends Controller
      */
     public function edit(Bodega $bodega)
     {
-        //
+        return view('bodegas.edit', [
+            'bodega' => $bodega
+        ]);
     }
 
     /**
@@ -52,7 +73,14 @@ class BodegaController extends Controller
      */
     public function update(Request $request, Bodega $bodega)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'ubicacion' => 'required|string',
+            'telefono' => 'required|string'
+        ]);
+
+        $bodega->update($validated);
+        return redirect(route('bodegas.show', $bodega));
     }
 
     /**
@@ -60,6 +88,7 @@ class BodegaController extends Controller
      */
     public function destroy(Bodega $bodega)
     {
-        //
+        $bodega->delete();
+        return redirect(route('bodegas.index'));
     }
 }
