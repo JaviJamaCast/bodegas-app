@@ -1,3 +1,11 @@
+@extends('layouts.master')
+
+@section('title', 'Lista de Artículos')
+
+@section('titulo', 'RevistApp')
+
+@section('content')
+
 <form method="POST" action="{{ route('bodegas.update', $bodega) }}">
     @csrf
     @method('PUT')
@@ -17,3 +25,6 @@
     <button type="submit">Editar</button>
     <a href="{{ route('bodegas.index') }}">Volver</a>
 </form>
+@endsection
+
+@section('footer', '')

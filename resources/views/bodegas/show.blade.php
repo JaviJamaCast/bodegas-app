@@ -1,3 +1,11 @@
+@extends('layouts.master')
+
+@section('title', 'Lista de Artículos')
+
+@section('titulo', 'RevistApp')
+
+@section('content')
+
 <ul>
     <li>Fecha de creación: {{ $bodega->created_at }}</li>
     <li>Fecha de última actualización: {{ $bodega->updated_at }}</li>
@@ -28,3 +36,6 @@
     @endforeach
 </ul>
 <a href="{{route('bodegas.index')}}">Volver</a>
+@endsection
+
+@section('footer', '')
