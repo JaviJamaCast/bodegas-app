@@ -16,23 +16,29 @@
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
                 </div>
                 <div class="form-group">
-                    <label for="tipo">Tipo:</label>
-                    <input type="text" class="form-control" id="tipo" name="tipo" required>
+                    <label for="descripcion">Descripcion:</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="cosecha">Cosecha:</label>
-                    <input type="text" class="form-control" id="cosecha" name="cosecha" required>
+                    <label for="anyo">Año:</label>
+                    <input type="text" class="form-control" id="anyo" name="anyo" required>
                 </div>
                 <div class="form-group">
-                    <label for="precio">Precio:</label>
-                    <input type="number" class="form-control" id="precio" name="precio" required>
+                    <label for="alcohol">Alcohol:</label>
+                    <input type="number" class="form-control" id="alcohol" name="alcohol" required>
                 </div>
                 <div class="form-group">
-                    <label for="stock">Stock:</label>
-                    <input type="number" class="form-control" id="stock" name="stock" required>
+                    <label for="tipo">Tipo de vino:</label>
+                    <select class="form-control" id="tipo" name="tipo" required>
+                        <option value="">Seleccione un tipo</option>
+                        <option value="tinto">Tinto</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="rosado">Rosado</option>
+                        <option value="espumoso">Espumoso</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary my-4">Crear</button>
-                <a href="{{ route('bodegas.index') }}" class="btn btn-secondary">Volver</a>
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">Volver</a>
             </form>
         </div>
     </div>

@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('bodega_id')->constrained()->cascadeOnDelete();
             $table->string('nombre');
+            $table->string('descripcion');
+            $table->integer('anyo');
+            $table->double('alcohol');
             $table->string('tipo');
-            $table->string('cosecha');
-            $table->double('precio');
-            $table->integer('stock');
             $table->timestamps();
         });
     }

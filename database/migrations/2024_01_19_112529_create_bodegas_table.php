@@ -15,7 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string("nombre");
             $table->string("ubicacion");
+            $table->string("direccion");
+            $table->string("email");
             $table->string("telefono");
+            $table->string("contacto_persona");
+            $table->integer("anyo_fundacion");
+            $table->string("descripcion");
+            $table->boolean("disp_restaurante");
+            $table->boolean("disp_hotel");
             $table->timestamps();
         });
     }

@@ -33,24 +33,25 @@ class BodegaController extends Controller
     {
         //Validar la petición:
         $validated = $request->validate([
-            'nombre' => 'required|string|max:255',
+            'nombre' => 'required|string|max:40',
             'ubicacion' => 'required|string',
-            'telefono' => 'required|string|max:9'
+            'telefono' => 'required|string|max:12',
+            'direccion' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'descripcion' => 'required|string|max:1000', 
+            'contacto_persona' => 'required|string|max:255',
+            'anyo_fundacion' => 'required|integer|min:1900|max:' . date('Y'),
+            'disp_restaurante' => 'required|boolean',
+            'disp_hotel' => 'required|boolean'
         ]);
-        /* Si la validación falla se redirigirá al usuario 
-        a la página previa. Si pasa la validación, el controlador 
-        continuará ejecutándose.
-        */
-
-        // Insertar el artículo en la BBDD tras su validación.
+  
+       
         Bodega::create($validated);
 
         return redirect(route('bodegas.index'));
     }
 
-    /**
-     * Display the specified resource.
-     */
+   
     public function show(Bodega $bodega)
     {
         return view('bodegas.show', [
@@ -73,10 +74,19 @@ class BodegaController extends Controller
      */
     public function update(Request $request, Bodega $bodega)
     {
-        $validated = $request->validate([
-            'nombre' => 'required|string|max:255',
+       
+          //Validar la petición:
+          $validated = $request->validate([
+            'nombre' => 'required|string|max:50',
             'ubicacion' => 'required|string',
-            'telefono' => 'required|string'
+            'telefono' => 'required|string|max:12',
+            'direccion' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'descripcion' => 'required|string|max:1000', 
+            'contacto_persona' => 'required|string|max:255',
+            'anyo_fundacion' => 'required|integer|min:1900|max:' . date('Y'),
+            'disp_restaurante' => 'required|boolean',
+            'disp_hotel' => 'required|boolean'
         ]);
 
         $bodega->update($validated);

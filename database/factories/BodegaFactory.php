@@ -17,9 +17,16 @@ class BodegaFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->text($maxNbChars = 10),
-            'ubicacion' => $this->faker->text($maxNbChars = 20),
-            'telefono' => $this->faker->text($maxNbChars = 8)
+            'nombre' => $this->faker->text(10),
+            'ubicacion' => $this->faker->text(10),
+            'direccion' => $this->faker->streetAddress(),
+            'email' => $this->faker->freeEmail(),
+            'telefono' => $this->faker->phoneNumber(),
+            'contacto_persona' => $this->faker->text(20),
+            'anyo_fundacion' => $this->faker->dateTimeThisYear()->format('Y'),
+            'descripcion' => $this->faker->text(20),
+            'disp_restaurante' => $this->faker->boolean(50),
+            'disp_hotel' => $this->faker->boolean(50),
         ];
     }
 }

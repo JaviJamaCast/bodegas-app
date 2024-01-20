@@ -29,6 +29,7 @@ Route::put('bodegas/{bodega}/update', [BodegaController::class, 'update'])
     ->name('bodegas.update');
 Route::delete('{bodega}/delete', [BodegaController::class, 'destroy'])
     ->name('bodegas.destroy');
+    
 //Vinos
 Route::get('{vino}/vino/{bodega}/show', [VinoController::class, 'show'])
     ->name('vinos.show');

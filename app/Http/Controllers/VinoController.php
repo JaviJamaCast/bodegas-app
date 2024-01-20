@@ -33,9 +33,9 @@ class VinoController extends Controller
 
         $vino->nombre = $request->nombre;
         $vino->tipo = $request->tipo;
-        $vino->cosecha = $request->cosecha;
-        $vino->precio = $request->precio;
-        $vino->stock = $request->stock;
+        $vino->anyo = $request->anyo;
+        $vino->alcohol = $request->alcohol;
+        $vino->descripcion = $request->descripcion;
 
         $bodega->vinos()->save($vino);
 
@@ -71,9 +71,9 @@ class VinoController extends Controller
         $validate = $request->validate([
             'nombre' => 'required|string',
             'tipo' => 'required|string',
-            'cosecha' => 'required|string',
-            'precio' => 'required|integer',
-            'stock' => 'required|integer',
+            'anyo' => 'required|integer',
+            'alcohol' => 'required|integer',
+            'descripcion' => 'required|string',
 
         ]);
         $vino->update($validate);

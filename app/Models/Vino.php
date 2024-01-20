@@ -9,7 +9,7 @@ class Vino extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nombre', 'tipo', 'cosecha', 'precio', 'stock'
+        'nombre', 'tipo', 'anyo', 'descripcion', 'alcohol'
     ];
     public function Bodega()
     {

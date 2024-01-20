@@ -11,12 +11,18 @@ class Bodega extends Model
     protected $fillable = [
         'nombre',
         'ubicacion',
-        'telefono'
+        'telefono',
+        'direccion',
+        'email',
+        'descripcion',
+        'contacto_persona',
+        'anyo_fundacion',
+        'disp_restaurante',
+        'disp_hotel'
     ];
 
     public function vinos()
     {
         return $this->hasMany(Vino::class);
     }
-
 }

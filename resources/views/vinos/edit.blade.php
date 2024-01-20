@@ -17,20 +17,26 @@
                     <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $vino->nombre }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="tipo">Tipo:</label>
-                    <input type="text" class="form-control" id="tipo" name="tipo" value="{{ $vino->tipo }}" required>
+                    <label for="tipo">Tipo de vino:</label>
+                    <select class="form-control" id="tipo" name="tipo" required>
+                        <option value="">Seleccione un tipo</option>
+                        <option value="tinto" {{ $vino->tipo == 'tinto' ? 'selected' : '' }}>Tinto</option>
+                        <option value="blanco" {{ $vino->tipo == 'blanco' ? 'selected' : '' }}>Blanco</option>
+                        <option value="rosado" {{ $vino->tipo == 'rosado' ? 'selected' : '' }}>Rosado</option>
+                        <option value="espumoso" {{ $vino->tipo == 'espumoso' ? 'selected' : '' }}>Espumoso</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="cosecha">Cosecha:</label>
-                    <input type="text" class="form-control" id="cosecha" name="cosecha" value="{{ $vino->cosecha }}" required>
+                    <label for="anyo">Año:</label>
+                    <input type="number" class="form-control" id="anyo" name="anyo" value="{{ $vino->anyo }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="precio">Precio:</label>
-                    <input type="number" class="form-control" id="precio" name="precio" value="{{ $vino->precio }}" required>
+                    <label for="alcohol">Alcohol:</label>
+                    <input type="number" class="form-control" id="alcohol" name="alcohol" value="{{ $vino->alcohol }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="stock">Stock:</label>
-                    <input type="number" class="form-control" id="stock" name="stock" value="{{ $vino->stock }}" required>
+                    <label for="stock">Descripcion:</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" required>{{$vino->descripcion}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary my-4">Editar</button>
                 <a href="{{ route('bodegas.show', $bodega) }}" class="btn btn-secondary">Volver</a>
