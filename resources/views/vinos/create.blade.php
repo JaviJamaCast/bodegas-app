@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="alcohol">Alcohol:</label>
-                    <input type="number" class="form-control" id="alcohol" name="alcohol" required>
+                    <input type="number" step="0.01" class="form-control" id="alcohol" name="alcohol" required>
                 </div>
                 <div class="form-group">
                     <label for="tipo">Tipo de vino:</label>
